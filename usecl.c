@@ -1,17 +1,4 @@
-#define _GNU_SOURCE
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
-#include <sys/poll.h>
-#include <time.h>
-#include <errno.h>
-#include <sys/fcntl.h>
-
-struct logfile {
-  int fd;
-  char* last_line;
-};
+#include "usecl.h"
 
 int tick_files(struct logfile* fds, int nfds) {
   for (size_t i = 0; i < nfds; ++i) {
