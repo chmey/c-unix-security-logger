@@ -1,13 +1,4 @@
-#define _GNU_SOURCE
-#include <systemd/sd-journal.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
-#include <sys/poll.h>
-#include <time.h>
-#include <errno.h>
-#include <sys/fcntl.h>
+#include "usecl.h"
 
 char* strip_prefix_journal(const char* str) {
   char* pos = strchr(str, '=');
@@ -15,10 +6,7 @@ char* strip_prefix_journal(const char* str) {
 }
 
 int tick_journal(sd_journal* jrnl) {
-  struct data {
-    const void *ptr;
-    size_t len;
-  };
+
   struct data data;
 
   /*
