@@ -26,12 +26,12 @@ int main(int argc, char const *argv[]) {
   int ret;
   unsigned int delay = 10;
   struct logfile files[2];
-  files[0].fd = open("/var/log/syslog", O_RDONLY);
-  files[1].fd = open("/var/log/authlog", O_RDONLY);
+  files[0].fd = open("/var/log/auth.log", O_RDONLY);
+  files[1].fd = open("/var/log/messages", O_RDONLY);
   files[0].last_line = (char*) malloc(128 * sizeof(char));
   files[1].last_line = (char*) malloc(128 * sizeof(char));
   if(files[0].fd == -1 || files[1].fd == -1) {
-    fprintf(stderr, "FATAL ERROR: Failed opening syslog or authlog for reading.\n");
+    fprintf(stderr, "FATAL ERROR: Failed opening messages log or auth.log for reading.\n");
     return(1);
   }
 
