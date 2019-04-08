@@ -9,7 +9,7 @@ Modern implementations of systemd on Linux no longer use the files `/var/log/aut
 
 Instead a more centralized approach with the `journalctl` is used to query the systemd journal [[1]](https://www.freedesktop.org/software/systemd/man/journalctl.html).
 
-So writing a security audit tools for modern systemd implementation required reading from the `sd-journal.h`-api [[2]](https://www.freedesktop.org/software/systemd/man/sd-journal.html). **For now this is the only method used by this program.**
+So writing a security audit tools for modern systemd implementations required reading from the `sd-journal.h`-api [[2]](https://www.freedesktop.org/software/systemd/man/sd-journal.html). **For now this is the only method used by this program.**
 
 Future work includes the reading from the actual log files.
 
