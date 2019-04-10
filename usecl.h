@@ -14,3 +14,4 @@ struct logfile {
 };
 
 int tick_files(struct logfile*, int);
+char parse_line(char*);
